@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    padding-left: var(--spacing-xxlarge);
+    padding-right: var(--spacing-xxlarge);
+    padding-bottom: var(--spacing-medium);
+    padding-top: var(--spacing-medium);
+    background-color: #000;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container p.char-delta {
+    color: var(--primary-color);
+    font-family: "Source Serif 4", serif;
+    font-size: var(--font-size-xlarge);
+    color: #FFDB58;
+}
+
+.header-container p.char-s {
+    color: var(--primary-color);
+    font-family: "Gravitas One", cursive;
+    font-size: var(--font-size-xlarge);
+    color: #FFDB58;
+}
