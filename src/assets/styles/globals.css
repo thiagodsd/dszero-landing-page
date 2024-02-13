@@ -33,11 +33,9 @@ html, body {
 
 :root {
     /* colors */
-    --primary-color: #501357;
-    --secondary-color: #9AD6C7;
-    --tertiary-color: #A45FAC;
-    --quaternary-color: #135745;
-    --quinary-color: #574613;
+    --primary-color: #FFDB58;
+    --secondary-color: #00E0FF;
+    --tertiary-color: #FE59FF;
     /* font sizes */
     --font-size-small: 0.75rem;
     --font-size-medium: 1rem;
@@ -47,8 +45,9 @@ html, body {
     --font-size-xxxlarge: 3rem;
     /* font families */
     --font-family-header: 'Gravitas One', cursive;
-    --font-family-primary: 'Playfair Display', serif;
-    --font-family-secondary: 'Raleway', sans-serif;
+    --font-family-primary: 'Urbanist', sans-serif;
+    --font-family-secondary: 'Urbanist', sans-serif;
+    --button-font-family: 'Rowdies', cursive;
     /* spacing */
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
@@ -67,15 +66,14 @@ html, body {
     --icon-size-large: 3rem;
     --icon-size-xlarge: 4rem;
     /* button */
-    --button-font-family: 'Cinzel', serif;
     --button-border-radius: 0.5rem;
     --button-padding: 8px 15px 8px 15px;
     --button-font-size: 1.5rem;
     /* container */
     --container-display: flex;
     --container-gap: 2rem;
-    --container-padding-left: 10rem;
-    --container-padding-right: 10rem;
+    --container-padding-left: 8rem;
+    --container-padding-right: 8rem;
     --container-padding-top: 2rem;
     --container-padding-bottom: 2rem;
     /* section */
