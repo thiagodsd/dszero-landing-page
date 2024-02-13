@@ -11,7 +11,7 @@ function Header() {
         <div>
             <div className="header-container">
                 <div className="logo">
-                    {/* <p className="char-delta">&#948;S</p> */} <p className="char-s"><b>&#948;</b>S</p> 
+                    <p className="char-delta">&#948;</p><p className="char-s">S</p> 
                 </div>
                 <nav>
                     <div className={`hamburger ${isMenuVisible ? 'clicked' : ''}`} onClick={toggleMenu}>

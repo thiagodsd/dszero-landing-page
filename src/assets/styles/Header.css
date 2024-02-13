@@ -26,12 +26,16 @@
     color: var(--primary-color);
     font-size: var(--font-size-xxxlarge);
     font-family: "Source Serif 4", serif;
+    display: flex;
+    align-items: last baseline;
 }
 
 .header-container .logo p.char-s {
     color: var(--primary-color);
     font-family: var(--font-family-header);
     font-size: var(--font-size-xxxlarge);
+    display: flex;
+    align-items: last baseline;
 }
 
 nav {
