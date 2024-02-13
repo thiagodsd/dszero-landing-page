@@ -71,9 +71,9 @@ html, body {
     --button-font-size: 1.5rem;
     /* container */
     --container-display: flex;
-    --container-gap: 2rem;
-    --container-padding-left: 8rem;
-    --container-padding-right: 8rem;
+    --container-gap: 3rem;
+    --container-padding-left: 6rem;
+    --container-padding-right: 6rem;
     --container-padding-top: 2rem;
     --container-padding-bottom: 2rem;
     /* section */
