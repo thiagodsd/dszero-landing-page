@@ -12,8 +12,8 @@ function HeroSection() {
             <div className="hero-container">
                 <div className="hero-section-left">
                     <h1>Reduza Desordem<br/>Minimize Esforços<br/>Atinja Objetivos</h1>
-                    <h2>Desbloqueie todo o potencial que os seus dados possuem</h2>
-                    <h3>Garimpamos resultados nos seus dados através de soluções estruturadas por  técnicas e ferramentas de ciência de dados, aprendizagem de máquina e desenvolvimento de software.</h3>
+                    {/* <h2>Desbloqueie todo o potencial que os seus dados possuem</h2> */}
+                    <p>Garimpamos resultados nos seus dados através de soluções estruturadas por  técnicas e ferramentas de ciência de dados, aprendizagem de máquina e desenvolvimento de software.</p>
                     <div className="hero-buttons">
                         <button className="atendimento-button" onClick={() => navigateAndLog('https://dszero.setmore.com', 'hero_contact-button')}>
                             Agendar Conversa
