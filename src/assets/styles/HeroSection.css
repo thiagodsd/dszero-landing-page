@@ -47,7 +47,7 @@
     font-size: var(--font-size-xlarge);
 }
 
-.hero-section-left h3 {
+.hero-section-left h3, .hero-section-left p {
     width: 100%;
     font-family: var(--font-family-secondary);
     text-align: left;
@@ -162,7 +162,7 @@
         font-size: var(--mobile-font-size-large);
     }
     
-    .hero-section-left h3 {
+    .hero-section-left h3, .hero-section-left p {
         font-size: var(--mobile-font-size-normal);
     }
 
