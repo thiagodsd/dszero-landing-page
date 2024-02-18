@@ -8,7 +8,7 @@ const portfolioItems = [
       "Clustering",
       "Machine Learning"
     ],
-    "featuredImage": "path/to/clustering-project/image.jpg"
+    "featuredImage": "src/assets/images/portfolio/clustering-project.png"
   },
   {
     "id": "regression-project",
@@ -19,7 +19,7 @@ const portfolioItems = [
       "Regression",
       "Machine Learning"
     ],
-    "featuredImage": "path/to/regression-project/image.jpg"
+    "featuredImage": "src/assets/images/portfolio/regression-project.png"
   }
 ];
 

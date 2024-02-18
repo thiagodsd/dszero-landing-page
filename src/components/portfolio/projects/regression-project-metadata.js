@@ -3,6 +3,5 @@ module.exports = {
         title: 'Regression Project',
         description: 'A detailed case study on regression analysis',
         tags: ['Data Science', 'Regression', 'Machine Learning'],
-        featuredImage: 'path/to/regression-project/image.jpg',
+        featuredImage: 'src/assets/images/portfolio/regression-project.png'
 }
-    

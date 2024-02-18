@@ -127,6 +127,17 @@
     color: #444;
 }
 
+@media (max-width: 1450px) {
+    .atendimento-button, .saiba-mais {
+        font-size: var(--mobile-font-size-normal);
+    }
+
+    .hero-buttons {
+        justify-content: space-evenly;
+    }
+}
+
+
 @media (max-width: 1340px) {
     .hero-container {
         display: var(--mobile-container-display);
