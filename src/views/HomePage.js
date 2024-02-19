@@ -9,7 +9,9 @@ function HomePage() {
     <div>
       <Header />
       <HeroSection />
+      <PortfolioSection />
       <Services />
+      <PortfolioSection />
       <PortfolioSection />
       {/* <Blog/Instagram /> */}
       {/* <AboutUs /> */}
