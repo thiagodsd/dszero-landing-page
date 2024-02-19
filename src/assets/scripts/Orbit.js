@@ -83,9 +83,14 @@ const ClusteringIllustration = () => {
 
     // return <canvas ref={canvasRef} />;
     // return <canvas ref={canvasRef} width="400" height="400" style={{ background: 'black' }} />;
+    // return (
+    //     <div style={{ width: '400px', height: '400px' }}> {/* Container to control the chart size */}
+    //         <canvas ref={canvasRef} style={{ width: '400px', height: '400px', background: 'black' }} />
+    //     </div>
+    // );
     return (
-        <div style={{ width: '400px', height: '400px' }}> {/* Container to control the chart size */}
-            <canvas ref={canvasRef} style={{ width: '400px', height: '400px', background: 'black' }} />
+        <div style={{ width: '400px', height: '400px' }}>
+            <canvas ref={canvasRef} width="400" height="400" />
         </div>
     );
 };
