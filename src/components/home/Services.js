@@ -20,14 +20,14 @@ function ServicesSection() {
                 <hr/>
                 <br/>
                 <div className="services-section">
-                    <div className="services-plot">
+                    <div className="services-item">
                         <ScatterPlot data={scatterPlotData} />
                     </div>
                 </div>  
                 <div className="services-section">
-                    <div className="services-plot">
+                <div className="services-item">
                         <ClusteringAnimation />
-                    </div>
+                        </div>
                 </div>  
             </div>
         </div>

@@ -24,6 +24,8 @@ const ScatterPlot = ({ data }) => {
                     }],
                 },
                 options: {
+                    responsive: true, // Ensure the chart is responsive
+                    maintainAspectRatio: false, // Optional: if you want the chart to scale in both dimensions without preserving the aspect ratio
                     scales: {
                         x: { display: false },
                         y: { display: false }
@@ -99,7 +101,11 @@ const ScatterPlot = ({ data }) => {
         }
     }, [data]);
 
-    return <canvas ref={chartRef} width="400" height="400" style={{ background: 'black' }} />;
+    return (
+        <div style={{ width: '400px', height: '400px' }}> {/* Container to control the chart size */}
+            <canvas ref={chartRef} style={{ width: '100%', height: '400px', background: 'black' }} />
+        </div>
+    );
 };
 
 export default ScatterPlot;

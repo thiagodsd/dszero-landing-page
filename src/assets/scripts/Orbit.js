@@ -18,7 +18,7 @@ const ClusteringIllustration = () => {
         };
 
         const drawPoints = () => {
-            ctx.fillStyle = 'white';
+            ctx.fillStyle = '#FFDB58';
             points.dots.forEach(dot => {
                 ctx.beginPath();
                 ctx.arc(dot.x, dot.y, 5, 0, 2 * Math.PI);
@@ -30,7 +30,7 @@ const ClusteringIllustration = () => {
             });
         };
 
-        const animateArc = (centerX, centerY, pointsSet, color) => {
+        const animateArc = (centerX, centerY, pointsSet) => {
             let arcLength = { value: 0 };
             const tl = gsap.timeline({
                 paused: true,
@@ -39,11 +39,17 @@ const ClusteringIllustration = () => {
                     drawPoints();
                     ctx.beginPath();
                     ctx.arc(centerX, centerY, 50, 0, arcLength.value * Math.PI);
-                    ctx.strokeStyle = color;
+        
+                    // Create a linear gradient for the stroke
+                    const gradient = ctx.createLinearGradient(centerX - 50, centerY - 50, centerX + 50, centerY + 50);
+                    gradient.addColorStop(0, '#00E0FF');
+                    gradient.addColorStop(1, '#FE59FF');
+        
+                    ctx.strokeStyle = gradient;
                     ctx.stroke();
                 }
             });
-
+        
             tl.to(arcLength, { value: 2, duration: 2, ease: "power1.inOut" });
             return tl;
         };
@@ -75,7 +81,13 @@ const ClusteringIllustration = () => {
         return () => observer.disconnect();
     }, []);
 
-    return <canvas ref={canvasRef} />;
+    // return <canvas ref={canvasRef} />;
+    // return <canvas ref={canvasRef} width="400" height="400" style={{ background: 'black' }} />;
+    return (
+        <div style={{ width: '400px', height: '400px' }}> {/* Container to control the chart size */}
+            <canvas ref={canvasRef} style={{ width: '400px', height: '400px', background: 'black' }} />
+        </div>
+    );
 };
 
 export default ClusteringIllustration;
