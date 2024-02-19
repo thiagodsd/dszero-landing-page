@@ -1,6 +1,7 @@
 import React from "react";
 import "../../assets/styles/Services.css";
 import ScatterPlot from '../../assets/scripts/ScatterPlot';
+import ClusteringAnimation from '../../assets/scripts/Orbit';
 
 function ServicesSection() {
     const scatterPlotData = [
@@ -21,6 +22,11 @@ function ServicesSection() {
                 <div className="services-section">
                     <div className="services-plot">
                         <ScatterPlot data={scatterPlotData} />
+                    </div>
+                </div>  
+                <div className="services-section">
+                    <div className="services-plot">
+                        <ClusteringAnimation />
                     </div>
                 </div>  
             </div>

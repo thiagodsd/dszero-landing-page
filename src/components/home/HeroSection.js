@@ -31,7 +31,7 @@ function HeroSection() {
                     </div>
                 </div>
             </div>
-            {/* Other content of the HeroSection can go here */}
+            <br/><br/><br/>
         </div>
     );
 }

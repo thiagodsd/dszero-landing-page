@@ -16,7 +16,7 @@ const PortfolioSection = () => {
 
     return (
         <div className="portfolio-container">
-            <h2>Portfolio</h2>
+            <h2>Projetos</h2>
             <hr/>
             <br/>
             <div className="portfolio-grid">
