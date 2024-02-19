@@ -1,5 +1,16 @@
 const portfolioItems = [
   {
+    "id": "classification-project",
+    "title": "Classification Project",
+    "description": "A detailed case study on classification analysis",
+    "tags": [
+      "Data Science",
+      "Classification",
+      "Machine Learning"
+    ],
+    "featuredImage": "src/assets/images/portfolio/classification-project.png"
+  },
+  {
     "id": "clustering-project",
     "title": "Clustering Project",
     "description": "A detailed case study on data clustering",

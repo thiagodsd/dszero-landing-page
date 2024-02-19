@@ -44,3 +44,10 @@
     justify-content: flex-start;
     width: 100%;
 }
+
+@media (max-width: 600px) {
+    .services-item div {
+        transform: scale(0.5);
+        transform-origin: top left; /* Ensure scaling starts from top left */
+    }
+}

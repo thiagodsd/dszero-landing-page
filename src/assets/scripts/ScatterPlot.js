@@ -1,109 +1,82 @@
 import React, { useEffect, useRef } from 'react';
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import gsap from 'gsap';
 
-const ScatterPlot = ({ data }) => {
-    const chartRef = useRef(null);
+const scatterPlotData = [
+    { x: 0.045, y: 0.078 },
+    { x: 0.354, y: 0.545 },
+    { x: 0.915, y: 1.001 },
+    { x: 0.123, y: 0.234 },
+    { x: 0.345, y: 0.456 },
+    { x: 0.789, y: 0.987 }
+];
+
+const ScatterPlot = () => {
+    const canvasRef = useRef(null);
 
     useEffect(() => {
-        const chartElement = chartRef.current; 
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        canvas.style.background = 'black';
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
 
-        if (chartRef.current) {
-            const ctx = chartRef.current.getContext('2d');
-            const gradient = ctx.createLinearGradient(0, 0, 400, 0);
+        const mapToCanvasCoords = (x, y) => {
+            // Adjusted mapping to fit [-0.25, 1.25] frame
+            const normalizedX = (x + 0.25) / 1.5;
+            const normalizedY = (y + 0.25) / 1.5;
+            return {
+                x: normalizedX * canvasWidth,
+                y: canvasHeight - (normalizedY * canvasHeight)
+            };
+        };
+
+        const drawScatterPlot = () => {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            ctx.fillStyle = '#FFDB58';
+            scatterPlotData.forEach(point => {
+                const { x, y } = mapToCanvasCoords(point.x, point.y);
+                ctx.beginPath();
+                ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+        };
+
+        const drawLine = (progress) => {
+            const { x: startX, y: startY } = mapToCanvasCoords(0, 0.0918);
+            const { x: endX, y: endY } = mapToCanvasCoords(0.915, 1.0705);
+            const gradient = ctx.createLinearGradient(startX, startY, endX, endY);
             gradient.addColorStop(0, '#00E0FF');
             gradient.addColorStop(1, '#FE59FF');
 
-            const scatterChart = new Chart(ctx, {
-                type: 'scatter',
-                data: {
-                    datasets: [{
-                        label: 'Scatter Dataset',
-                        data: data,
-                        backgroundColor: '#FFDB58',
-                    }],
-                },
-                options: {
-                    responsive: true, // Ensure the chart is responsive
-                    maintainAspectRatio: false, // Optional: if you want the chart to scale in both dimensions without preserving the aspect ratio
-                    scales: {
-                        x: { display: false },
-                        y: { display: false }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                    },
-                    elements: {
-                        line: {
-                            borderColor: gradient,
-                            borderWidth: 2,
-                        },
-                        point: {
-                            radius: 5
-                        }
-                    },
-                    backgroundColor: 'black',
-                }
-            });
+            const currentX = startX + (endX - startX) * progress;
+            const currentY = startY + (endY - startY) * progress;
 
-            let lineAdded = false;
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(currentX, currentY);
+            ctx.stroke();
+        };
 
-            const addLine = () => {
-                if (!lineAdded) {
-                    scatterChart.data.datasets.push({
-                        data: [
-                            { x: 0, y: 0.0918 }, 
-                            { x: 1, y: 1.1615 }
-                        ],
-                        type: 'line',
-                        borderColor: gradient,
-                        borderWidth: 2,
-                        showLine: true,
-                        fill: false,
-                        pointRadius: 0,
-                    });
-                    lineAdded = true;
-                    scatterChart.update();
-                }
-            };
+        let lineProgress = { value: 0 };
+        gsap.to(lineProgress, {
+            value: 1,
+            duration: 2,
+            onUpdate: () => {
+                drawScatterPlot();
+                drawLine(lineProgress.value);
+            }
+        });
 
-            const removeLine = () => {
-                if (lineAdded) {
-                    scatterChart.data.datasets = scatterChart.data.datasets.filter(d => d.type !== 'line');
-                    lineAdded = false;
-                    scatterChart.update();
-                }
-            };
-
-            // Intersection Observer to detect when the chart is in view
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                            addLine();
-                        } else {
-                            removeLine();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.5 // Trigger when 50% of the element is in view
-                }
-            );
-
-            observer.observe(chartRef.current);
-
-            // Cleanup function
-            return () => {
-                scatterChart.destroy();
-                observer.unobserve(chartElement);
-            };
-        }
-    }, [data]);
+        return () => {
+            gsap.killTweensOf(lineProgress);
+        };
+    }, []);
 
     return (
-        <div style={{ width: '400px', height: '400px' }}> {/* Container to control the chart size */}
-            <canvas ref={chartRef} style={{ width: '100%', height: '400px', background: 'black' }} />
+        <div style={{ width: '400px', height: '400px' }}>
+            <canvas ref={canvasRef} width="400" height="400" />
         </div>
     );
 };

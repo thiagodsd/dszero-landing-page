@@ -5,10 +5,12 @@ import "../../assets/styles/PortfolioSection.css";
 
 import clustering_img from "../../assets/images/portfolio/clustering-project.png";
 import regression_img from "../../assets/images/portfolio/regression-project.png";
+import classification_img from "../../assets/images/portfolio/classification-project.png";
 
 const imageMap = {
     'clustering-project': clustering_img,
-    'regression-project': regression_img
+    'regression-project': regression_img,
+    'classification-project': classification_img
 };
 
 const PortfolioSection = () => {
