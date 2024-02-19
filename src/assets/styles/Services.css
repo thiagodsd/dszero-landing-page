@@ -33,11 +33,14 @@
 
 .services-section {
     display: flex;
-    width: 100%;
+    flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
 }
 
-.services-plot {
-    width: 25%;
-    height: 25%;
+.services-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
 }
