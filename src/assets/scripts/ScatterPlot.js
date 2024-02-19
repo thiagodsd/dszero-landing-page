@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
+
 Chart.register(...registerables);
 
 const ScatterPlot = ({ data }) => {
@@ -42,45 +43,42 @@ const ScatterPlot = ({ data }) => {
                 }
             });
 
-            let lineAdded = false;
-
-            const mousemoveHandler = (event) => {
-                if (!lineAdded) {
-                    scatterChart.data.datasets.push({
-                        data: [
-                            { x: 0, y: 0.0918 }, 
-                            { x: 1, y: 1.1615 }
-                        ],
-                        type: 'line',
-                        borderColor: gradient,
-                        borderWidth: 2,
-                        showLine: true,
-                        fill: false,
-                        pointRadius: 0,
-                    });
-                    lineAdded = true;
-                    scatterChart.update();
-                }
+            // Function to add the regression line
+            const addRegressionLine = () => {
+                scatterChart.data.datasets.push({
+                    data: [
+                        { x: 0, y: 0.0918 }, 
+                        { x: 1, y: 1.1615 }
+                    ],
+                    type: 'line',
+                    borderColor: gradient,
+                    borderWidth: 2,
+                    showLine: true,
+                    fill: false,
+                    pointRadius: 0,
+                });
+                scatterChart.update();
             };
 
-            const mouseoutHandler = (event) => {
-                if (lineAdded) {
-                    scatterChart.data.datasets = scatterChart.data.datasets.filter(d => d.type !== 'line');
-                    lineAdded = false;
-                    scatterChart.update();
-                }
-            };
+            // Intersection Observer for adding the line when the chart is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        addRegressionLine();
+                        // Optional: Unobserve after adding the line
+                        observer.unobserve(chartRef.current);
+                    }
+                });
+            }, {
+                threshold: 0.99 // Trigger when 50% of the chart is visible
+            });
 
-            // Add event listeners
-            const canvas = chartRef.current;
-            canvas.addEventListener('mousemove', mousemoveHandler);
-            canvas.addEventListener('mouseout', mouseoutHandler);
+            observer.observe(chartRef.current);
 
             // Cleanup function
             return () => {
                 scatterChart.destroy();
-                canvas.removeEventListener('mousemove', mousemoveHandler);
-                canvas.removeEventListener('mouseout', mouseoutHandler);
+                observer.disconnect();
             };
         }
     }, [data]);
