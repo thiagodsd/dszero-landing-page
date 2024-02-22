@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import portfolioItems from '../../content/portfolioItems';
 import "../../assets/styles/PortfolioSection.css";
 
-import clustering_img from "../../assets/images/portfolio/clustering-project.png";
-import regression_img from "../../assets/images/portfolio/regression-project.png";
-import classification_img from "../../assets/images/portfolio/classification-project.png";
+// import clustering_img from "../../assets/images/portfolio/clustering-project.png";
+// import regression_img from "../../assets/images/portfolio/regression-project.png";
+// import classification_img from "../../assets/images/portfolio/classification-project.png";
+import webdev_img from "../../assets/images/portfolio/webdev-project.png";
 
 const imageMap = {
-    'clustering-project': clustering_img,
-    'regression-project': regression_img,
-    'classification-project': classification_img
+    // 'clustering-project': clustering_img,
+    // 'regression-project': regression_img,
+    // 'classification-project': classification_img,
+    'webdev-project': webdev_img
 };
 
 const PortfolioSection = () => {
@@ -29,6 +31,7 @@ const PortfolioSection = () => {
                             <div className="portfolio-item-overlay">Ver Projeto</div>
                         </Link>
                         <h3>{item.title}</h3>
+                        <div>{item.tags.map(tag => <p>{tag}</p>)}</div>
                         <p>{item.description}</p>
                     </div>
                 ))}

@@ -12,7 +12,7 @@ const scatterPlotData = [
 
 const ScatterPlot = () => {
     const canvasRef = useRef(null);
-    let lineProgress = { value: 0 }; // Define outside useEffect to use in cleanup
+    const lineProgressRef = useRef({ value: 0 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -57,13 +57,13 @@ const ScatterPlot = () => {
         };
 
         // GSAP animation for the line
-        const lineAnimation = gsap.to(lineProgress, {
+        const lineAnimation = gsap.to(lineProgressRef.current, {
             value: 1,
             duration: 2,
             paused: true,
             onUpdate: () => {
-                drawScatterPlot(); // Redraw scatter plot to clear previous line frames
-                drawLine(lineProgress.value);
+                drawScatterPlot();
+                drawLine(lineProgressRef.current.value);
             }
         });
 
@@ -86,7 +86,7 @@ const ScatterPlot = () => {
         // Cleanup function
         return () => {
             observer.disconnect();
-            gsap.killTweensOf(lineProgress);
+            lineAnimation.kill(); // Corrected to use the .kill() method
         };
     }, []);
 
