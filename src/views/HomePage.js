@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/common/Header';
 import HeroSection from '../components/home/HeroSection';
-import Services from '../components/home/Services';
+// import Services from '../components/home/Services';
 import PortfolioSection from '../components/home/PortfolioSection';
 
 function HomePage() {
@@ -9,7 +9,8 @@ function HomePage() {
     <div>
       <Header />
       <HeroSection />
-      <Services />
+      {/* <Services />
+      <PortfolioSection /> */}
       <PortfolioSection />
       {/* <Blog/Instagram /> */}
       {/* <AboutUs /> */}
