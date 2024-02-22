@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import navigateAndLog from '../../utils/navigateAndLog';
 import "../../assets/styles/Header.css";
 
@@ -10,9 +11,11 @@ function Header() {
     return (
         <div>
             <div className="header-container">
-                <div className="logo">
-                    <p className="char-delta">&#948;</p><p className="char-s">S</p> 
-                </div>
+                <Link to="/">
+                    <div className="logo">
+                        <p className="char-delta">&#948;</p><p className="char-s">S</p> 
+                    </div>
+                </Link>
                 <nav>
                     <div className={`hamburger ${isMenuVisible ? 'clicked' : ''}`} onClick={toggleMenu}>
                         <div className="line line-1"></div>
