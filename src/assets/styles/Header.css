@@ -17,6 +17,10 @@
     justify-content: center;
 }
 
+.header-container a {
+    text-decoration: none;
+}
+
 .header-container .logo {
     display: flex;
     flex-direction: row;

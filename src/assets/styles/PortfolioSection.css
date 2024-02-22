@@ -79,6 +79,14 @@
     opacity: 1;
 }
 
+.portfolio-tags {
+    display: flex;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: var(--font-size-small);
+}
+
 @media (max-width: 1340px) {
 }
 

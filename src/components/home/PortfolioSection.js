@@ -31,7 +31,7 @@ const PortfolioSection = () => {
                             <div className="portfolio-item-overlay">Ver Projeto</div>
                         </Link>
                         <h3>{item.title}</h3>
-                        <div>{item.tags.map(tag => <p>{tag}</p>)}</div>
+                        <div className="portfolio-tags">{item.tags.map(tag => <p>{tag}</p>)}</div>
                         <p>{item.description}</p>
                     </div>
                 ))}

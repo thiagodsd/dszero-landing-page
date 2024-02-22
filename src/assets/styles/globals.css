@@ -37,6 +37,7 @@ html, body {
     --secondary-color: #00E0FF;
     --tertiary-color: #FE59FF;
     /* font sizes */
+    --font-size-tiny: 0.5rem;
     --font-size-small: 0.75rem;
     --font-size-medium: 1rem;
     --font-size-large: 1.25rem;
