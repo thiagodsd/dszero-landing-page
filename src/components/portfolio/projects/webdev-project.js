@@ -29,7 +29,15 @@ const WebDevProject = () => (
                 <div className="portfolio-page-section-left">
                     <h1>{metadata.title}</h1>
                     <div className="portfolio-tags">{metadata.tags.map(tag => <p>{tag}</p>)}</div>
-                    <p>Este é o resultado de um <i>job</i> real de desenvolvimento de um site comercial para uma advogada. Aqui fica evidente a abordagem holística adotada, destacando a amplitude dos serviços oferecidos pela DSZero em desenvolvimento web: a solução integrada abrangeu desde conceitos de <i>branding</i>, escolha de tipografia e design da logomarca, até a implementação de <i>e-mail</i> corporativo e a implementação da página web em estrutura de <i>landing page</i>, cuja simplicidade visual dialoga com uma sólida estrutura de <i>tracking</i> e elementos essenciais para a otimização de rankeamento em mecanismos de busca, tornando o site pronto para campanhas de tráfego pago.</p>
+                    <p>
+                        Este é o resultado de um <i>job</i> recente de desenvolvimento de um site comercial para uma advogada.
+                    </p>
+                    <p>
+                        Nesse projeto fica apresentada toda a amplitude dos serviços oferecidos pela DSZero em desenvolvimento web: a solução integrada abrangeu desde conceitos de <i>branding</i>, escolha de tipografia e design da logomarca, até a implementação de <i>e-mail</i> corporativo e a implementação da página web em estrutura de <i>landing page</i>, cuja simplicidade visual dialoga com uma sólida estrutura de <i>tracking</i> e elementos essenciais para a otimização de rankeamento em mecanismos de busca, tornando o site pronto para campanhas de tráfego pago.
+                    </p>
+                    <p>
+                        A solução final pode ser conferida em <b><a href="https://isadoraurel.adv.br/" target="_blank" rel="noopener noreferrer" >isadoraurel.adv.br</a></b>.
+                    </p>
                 </div>
             </div>
             <div className="portfolio-page-section">
