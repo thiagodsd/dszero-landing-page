@@ -82,9 +82,11 @@
 .portfolio-tags {
     display: flex;
     gap: var(--spacing-small);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     font-size: var(--font-size-small);
+    flex-direction: row;
+    width: 100%;
 }
 
 @media (max-width: 1340px) {
