@@ -19,7 +19,7 @@ const PortfolioSection = () => {
     const itemsToShow = portfolioItems.slice(0, 9);
 
     return (
-        <div className="portfolio-container">
+        <div className="portfolio-container" id="portfolio">
             <h2>Projetos</h2>
             <hr/>
             <br/>

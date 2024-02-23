@@ -23,10 +23,10 @@ function Header() {
                         <div className="line line-3"></div>
                     </div>
                     <ul className={`menu ${isMenuVisible ? 'visible' : ''}`}>
-                        <li><button onClick={() => navigateAndLog('#about', 'header_about-item')}>Sobre</button></li>
-                        <li><button onClick={() => navigateAndLog('#services', 'header_services-item')}>Serviços</button></li>
-                        <li><button onClick={() => navigateAndLog('#portfolio', 'header_portfolio-item')}>Projetos</button></li>
-                        <li><button onClick={() => navigateAndLog('#contact', 'header_contact-item')}>Contato</button></li>
+                        <li><button onClick={() => navigateAndLog('/#about', 'header_about-item')}>Sobre</button></li>
+                        <li><button onClick={() => navigateAndLog('/#services', 'header_services-item')}>Serviços</button></li>
+                        <li><button onClick={() => navigateAndLog('/#portfolio', 'header_portfolio-item')}>Projetos</button></li>
+                        <li><button onClick={() => navigateAndLog('/#contact', 'header_contact-item')}>Contato</button></li>
                     </ul>
                 </nav>
             </div>
