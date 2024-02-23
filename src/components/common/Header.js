@@ -10,7 +10,7 @@ function Header() {
     }
     return (
         <div>
-            <div className="header-container">
+            <div className="header-container" id="header">
                 <Link to="/">
                     <div className="logo">
                         <p className="char-delta">&#948;</p><p className="char-s">S</p> 

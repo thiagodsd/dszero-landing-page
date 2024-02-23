@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import metadata from './webdev-project-metadata';
 import "../../../assets/styles/PortfolioPage.css";
 
@@ -7,8 +8,16 @@ import img_web_cover from "../../../assets/images/portfolio/webdev-project_web-c
 
 import Header from '../../common/Header';
 
+const staticKeywords = ["Consultoria", "Ciência de Dados"];
+const keywords = [...staticKeywords, ...metadata.tags].join(", ");
+
 const WebDevProject = () => (
     <div className="portfolio-page">
+        <Helmet>
+            <title>{metadata.title}</title>
+            <meta name="description" content={metadata.description} />
+            <meta name="keywords" content={keywords} />
+        </Helmet>
         <Header />
         <div className="portfolio-page-container">
             <div className="portfolio-page-section">
