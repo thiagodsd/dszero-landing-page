@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import portfolioItems from '../../content/portfolioItems';
 
@@ -14,6 +14,10 @@ const portfolioItemComponents = {
 const PortfolioItemPage = () => {
     const { id } = useParams();
     const item = portfolioItems.find(item => item.id === id);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     if (!item) {
         return <div>Project not found</div>;
