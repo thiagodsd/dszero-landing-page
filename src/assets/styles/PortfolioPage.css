@@ -1,8 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
 .portfolio-page-container { 
     background-color: white;
@@ -18,6 +16,13 @@
 }
 
 .portfolio-page-section {
+    display: var(--section-display);
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.portfolio-page-section-summary {
     display: var(--section-display);
     gap: var(--section-gap);
     width: 100%;
@@ -50,10 +55,10 @@
 
 .portfolio-page-section-left p {
     font-family: var(--font-family-secondary);
-    text-align: left;
     font-weight: 100;
     font-size: var(--font-size-large);
     text-align: justify;
+    line-height: 1.75rem;
 }
 
 .portfolio-page-section-left p a {
@@ -89,5 +94,73 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+
+/* CONTENT */
+.portfolio-page-section-one-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: var(--font-family-primary);
+}
+
+.portfolio-page-section-one-column p {
+    font-size: var(--font-size-large);
+    font-weight: lighter;
+}
+
+.portfolio-page-subsection-two-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--sub-section-gap);
+}
+
+.portfolio-page-subsection-two-columns-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--sub-section-gap);
+}
+
+.portfolio-page-subsection-two-columns-column .figure {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-page-subsection-two-columns-column img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.portfolio-page-subsection-two-columns-column .font-sample {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.font-sample .text-h1 {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: var(--font-size-xxxlarge);
+}
+
+.font-sample .text-h2 {
+    font-family: "Playfair Display", serif;
+    font-size: var(--font-size-xxlarge);
+}
+
+.font-sample .text-p {
+    font-family: "Raleway", sans-serif;
+    font-size: var(--font-size-large);
 }
 
