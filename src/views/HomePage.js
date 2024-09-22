@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/common/Header';
 import HeroSection from '../components/home/HeroSection';
 // import Services from '../components/home/Services';
-import PortfolioSection from '../components/home/PortfolioSection';
+// import PortfolioSection from '../components/home/PortfolioSection';
 
 function HomePage() {
   return (
@@ -11,7 +11,7 @@ function HomePage() {
       <HeroSection />
       {/* <Services />
       <PortfolioSection /> */}
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       {/* <Blog/Instagram /> */}
       {/* <AboutUs /> */}
       {/* <Contact /> */}
