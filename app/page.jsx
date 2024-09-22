@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Home() {
     return (
-        <secttion>
+        <secttion className="py-24">
             <div className="container">
-                <h1 className="text-3xl font-bold">
+                <h1 className="mt-4 text-3xl font-bold">
                     Hello, world!
                 </h1>
             </div>
