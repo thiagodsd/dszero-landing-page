@@ -21,7 +21,24 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                {children}
+                <header className="bg-gray-800 text-white">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/about">About</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <main>
+                    {children}
+                </main>
+                <footer>
+                    <p>&copy; 2021</p>
+                </footer>
             </body>
         </html>
     );
