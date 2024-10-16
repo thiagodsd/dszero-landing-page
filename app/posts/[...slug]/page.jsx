@@ -2,7 +2,7 @@ import { getPostBySlug } from '@/lib/posts';
 
 const Page = async ({ params }) => {
     const {slug} = params;
-    const {content, frontmatter} = await getPostBySlug(slug);
+    const {content, frontmatter} = await getPostBySlug(slug[0]);
     return (
         <section className="py-24">
             <div className="container">
